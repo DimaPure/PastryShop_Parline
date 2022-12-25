@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/* Variables -------------------------------------------------------------------------------------------------------------------------------------------*/
+:root {
+    --font-family: "Roboto", sans-serf;
+    --normal-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+    --bod-color: #FFE7FB;
+    --black-color:rgb(15, 15, 15);
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.7rem;
+    --transition: 0.3s;
+    --animate-duration: 5s;
+    --animate-delay: 5s;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgb(255, 255, 255);
+    opacity:  0.6;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:     rgb(255, 255, 255);
+   opacity:  0.6;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgb(255, 255, 255);
+   opacity:  0.6;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    rgb(255, 255, 255);
+   opacity:  0.6;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:     rgb(255, 255, 255);
+   opacity:  0.6;
+}
+  
+::placeholder { /* Most modern browsers support this now. */
+   color:     rgb(255, 255, 255);
+   opacity:  0.6;
+}
+/* Variables end */
+
+/* Common styles */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+li{
+    padding: 10px;
+}
+  
+a:hover {
+    color: var(--bod-color);
+}
+/* Common styles */
+
+/* ------------------------------Body catalog--------------------------------- */
+/* Section first */
+.preview{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+.container_pr{
+    width: 95%;
+    padding: 90px;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background: url('/static/engine_html/picture/1.jpg') 0px 0px no-repeat;
+    background-position: left;
+    background-size: cover;
+    color: #FFFFFF;
+}
+#glav_text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 93px;
+    letter-spacing: 0.04em;
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.8);
+}
+.pod{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9);
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.but_ssl{
+    width: 19%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.order{
+    padding: 14px;
+    background: #F5BF00;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 23px;
+    margin-right: 15px;
+    color: #2F2E2E;
+}
+.vi{
+    text-decoration: none;
+    position:relative;
+}
+.vi:before{
+    position:absolute;
+    bottom: -5px;
+    content: " ";
+    border-bottom: 1px solid #ccc;
+    left:50%;
+    width:0%;
+    transition: all 0.3s;
+}
+.vi:hover:before{
+    width:100%;
+    left:0%
+}
+.lab{
+    font-size: 19px;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.824);
+    white-space:nowrap;
+}
+
+
+@media only screen and (max-width: 1052px) { 
+    #glav_text{
+        font-size: 60px;
+    }
+    .pod{
+        font-size: 20px;
+    }
+    .lab{
+        font-size: 17px;
+    }
+    .order{
+        padding: 12px;
+        font-size: 17px;
+    }
+
+}
+
+@media only screen and (max-width: 676px) { 
+    #glav_text{
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .pod{
+        font-size: 17px;
+        -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.824);
+    }
+    .lab{
+        font-size: 15px;
+        -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.824);
+    }
+    .order{
+        padding: 12px;
+        font-size: 17px;
+    }
+
+}
+
+@media only screen and (max-width: 548px) { 
+    .container_pr{
+        padding: 40px;
+    }
+    #glav_text{
+        font-size: 25px;
+        line-height: 35px;
+        text-align: center;
+    }
+    .pod{
+        font-size: 13px;
+        -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.824);
+        text-align: center;
+    }
+    .lab{
+        font-size: 12px;
+        -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.824);
+    }
+    .order{
+        padding: 7px;
+        font-size: 12px;
+    }
+
+}
+.dash2{
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color:  rgba(0, 0, 0, 0.7);
+    margin-bottom: 50px;
+}
+/* ------------------------------------------------------------------------------- */
+
+/* Section second - sliders ------------------------------------------------------*/
+.cont_lab{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+label.title{
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: calc(2.5rem + 6 * (100vw - 320px) / 880);
+    font-family: 'Roboto';
+    font-weight: 100;
+}
+.slider-var{
+    min-width: 0;
+    position: relative;
+
+}
+.slider_photo_size{
+    width: 200px;
+    height: auto;
+}
+.cont_f_slid{
+    margin-bottom: 50px;
+}
+
+/* Слайдеры */
+/*Стили для всех слайдеров*/
+    
+    /* Оболочка */
+.slick-list{
+    overflow: hidden;
+    margin: 0 100px 0 100px;
+}
+    /* Лента */
+.slick-track{
+    display: flex;
+    align-items: flex-start;
+}
+.slider_item{
+    text-align: center;
+}
+/* Бенто торты */
+    /* Стрелки */
+.slider-var .slick-arrow{
+    position: absolute;
+    top: 40%;
+    margin: -20px 0px 0px 0px;
+    z-index: 10;
+    font-size: 0;
+    width: 40px;
+    height: 60px;
+    border: none;
+}
+.slider-var .slick-arrow.slick-prev{
+    left: 0;
+    background: url('/static/engine_html/icon/left.png')0 0 /100% no-repeat;
+    background-size: cover;
+    margin-left: 20px;
+}
+.slider-var .slick-arrow.slick-next{
+    right: 0;
+    background: url('/static/engine_html/icon/right.png')0 0 /100% no-repeat;
+    background-size: cover;
+    background-position: -18px;
+    margin-right: 20px;
+}
+
+.slider-var .slick-dots{
+    display: flex;
+}
+/* ------------------------------------------------------------------------------- */
+
+/* ------------------------------End Body catalog--------------------------------- */

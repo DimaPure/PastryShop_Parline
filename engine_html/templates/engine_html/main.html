@@ -1,0 +1,60 @@
+{% extends 'engine_html/layout.html' %}
+
+{%block title%}Каталог{%endblock%}
+
+{%block content%}
+<section class = 'content' id = "Catalog">
+    {% comment %} Preview {% endcomment %}
+    <div class = "preview">
+        <div class = "container_pr">
+            <label id = "glav_text">Вкуснейшие<br> десерты на заказ</label>
+            <label class = "pod">создаю сладкие шедевры своими руками</label>
+            <div class = "but_ssl">
+                <button class = "order">Заказать</button>
+                <a class = "vi" href = "#"><label class = "lab">Смотреть работы</label></a>
+            </div>
+        </div>
+    </div>
+    <div class = 'dash2'></div>
+    {% comment %} Sliders {% endcomment %}
+    <div class="cont_f_slid">
+        
+        {% comment %} Photo {% endcomment %}
+
+        <div class="cake_sl" id = "photo">
+            
+                <div class = "cont_lab">
+                    <label class="title">БЕНТО - ТОРТЫ</label>
+                </div>
+
+                <div class="slider-var">
+
+                  <div class="slider_item">
+                    <img class = "slider_photo_size" src="/static/engine_html/picture/cake1.jpg" alt="торт1"/>
+                  </div>
+                  <div class="slider_item">
+                    <img class = "slider_photo_size" src="/static/engine_html/picture/cake2.jpg" alt="торт2"/>
+                  </div>
+                  <div class="slider_item">
+                    <img class = "slider_photo_size" src="/static/engine_html/picture/cake3.jpg" alt="торт3"/>
+                  </div>
+                  <div class="slider_item">
+                    <img class = "slider_photo_size" src="/static/engine_html/picture/cake4.jpg" alt="торт4"/>
+                  </div>
+                  <div class="slider_item">
+                    <img class = "slider_photo_size" src="/static/engine_html/picture/cake5.jpg" alt="торт5"/>
+                  </div>
+
+                </div>
+                {% comment %} Подключение сладера {% endcomment %}
+                
+                <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+                <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+                <script type="text/javascript" src="/static/engine_html/js/slick.min.js"></script>
+                <script src = "/static/engine_html/js/sliders.js"></script>
+        </div>
+    
+    </div>
+</section>
+
+{%endblock%}
