@@ -5,7 +5,27 @@ $(document).ready(function(){
       dots: false,
       infinite: false,
       speed: 900,
-      slidesToShow: 4,
-      adaptiveHeight: true
-    })
+      slidesToShow: 3,
+      adaptiveHeight: true,
+      touchMove: true,
+      centerMode: true,
+      initialSlide: 2
+      // asNavFor:".slider-var-big",
+      // Адаптив
+      // responsive:[
+      //   {
+      //     breakpoint: 640,
+      //     settings:{
+      //       slidesToShow: 2
+      //     }
+      //   }
+      // ]
+    });
+    // ----------------------------Большой слайдер-------------------------------
+    // $('.slider-var-big').slick({
+    //   arrows:false,
+    //   fade: true,
+    //   centerMode: true,
+    //   asNavFor:".slider-var"
+    // });
   })

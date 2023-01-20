@@ -10,5 +10,5 @@ urlpatterns = [
     path('price', include('engine_html.urls')),
     path('gallery', include('engine_html.urls')),
     path('reviews', include('engine_html.urls')),
-    path('people', include('engine_html.urls'))
+    path('cont', include('engine_html.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

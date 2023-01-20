@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 def main(request):
-    return render(request, 'engine_html/main.html')
+    return render(request, 'engine_html/main_catalog.html')
 
 
 def prices(request):
@@ -17,5 +17,5 @@ def gallerys(request):
     return render(request, 'engine_html/gallery.html')
 
 
-def people(request):
+def cont(request):
     return render(request, 'engine_html/contact.html')
