@@ -3,6 +3,68 @@
 {%block title%}Контакты{%endblock%}
 
 {%block content%}
-<h1> Контакты</h1>
-<p> Информация </p>
+<section class = 'content' id = "Con">
+    <div class = "cont-content">
+
+        <div class="form_area">
+            
+            <div class="hi_sec">
+                <div class="hi">Контактная информация кондитерской ParLine</div>
+                <div class = 'dash_c'></div>
+            </div>
+
+            <form action="#" class="form" id="form">
+                <div class = "container-inf">
+                    <div class = "inf">
+                        <strong style = "color:#F5BF00;">АДРЕС:</strong><br>
+                        <p style = "margin-top:15px;">г. Вологоград</p><br>
+                        <strong style = "color:#F5BF00;">ТЕЛЕФОНЫ <br>И ЭЛЕКТРОННАЯ ПОЧТА:</strong><br>
+                        <p style = "margin-top:15px;">+79999999999<br>
+                        info@ratibor.net</p>
+                    </div>
+                    <img class="ic_par_cont" src="/static/engine_html/icon/parline2.png">
+                </div>
+                <div class = "container-pole">
+
+                    <div class="sec-cont"> 
+                        <div class = "title-form" align = "center" style = "padding: 0 1em 1em 1em;"><strong id="title-f">Форма обратной связи</strong></div>
+                        <!-- Имя -->
+                        <div class="name data">
+                            <input tabindex="1" placeholder="Ваше ФИО" class="form_input" name="name">
+                        </div>
+                        <br>
+                        <!-- Мыло -->
+                        <div class="email data">
+                            <input tabindex="2" placeholder="Ваш e-mail" class="form_input" name="email">
+                        </div>
+                        <br>
+                        <!-- Телефон -->
+                        <div class="phone data">
+                            <input tabindex="3" placeholder="Ваш телефон" class="form_input" name="phone">
+                        </div>
+                        <br>
+                        <!-- Текст -->
+                        <textarea class = "form_input" id = "textar" placeholder = "Ваше сообщение"></textarea>
+                    </div>
+                      <!-- Кнопки -->
+                    <div class="buts">
+                        <div class="but1">
+                            <button class="bt" id = "push" type="reset">ОЧИСТИТЬ</button>
+                        </div>
+                        <div class="but1">
+                            <button class="bt" type="submit">ОТПРАВИТЬ</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div id = "map" class="map-cont"></div>
+
+    </div>
+
+</section>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+<script src = "/static/engine_html/js/map.js"></script>
 {%endblock%}

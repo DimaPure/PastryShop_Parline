@@ -116,8 +116,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
+    # BASE_DIR / "static",
+    # '/var/www/static/',
+    'C:/Users/chist/Desktop/Work/Учёба/Учёба/ВКР/Develope/Django-cake/CakeSite/engine_html/static',
 ]
 
 # Default primary key field type

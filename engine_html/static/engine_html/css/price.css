@@ -1,0 +1,79 @@
+/* Бенто секция */
+#Price{
+    min-height: calc(100vh - 320px); 
+}
+.main_price{
+    padding: 0px 50px 15px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.cont_pr{
+    margin-top: 15px;
+    padding: 30px;
+    width: 400px;
+    height: 600px;
+    /* border: 1px solid black; */
+    border-radius: 2%;
+    scrollbar-color: #000000 #ffffff; /* «цвет ползунка» «цвет полосы скроллбара» */
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    background-color:rgb(15, 15, 15);
+    position:relative;
+    padding-bottom:50px;
+}
+
+.bento_info{
+    overflow: auto;
+    margin-bottom: 30px;
+}
+.bento_info::-webkit-scrollbar {
+    width: 7px; /* ширина для вертикального скролла */
+    background-color: rgb(15, 15, 15);
+}
+
+/* ползунок скроллбара */
+.bento_info::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+.bento_def{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    font-family: 'Roboto';
+    font-weight: 700;
+}
+
+.dash_pr{
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color:  #F5BF00;
+    color:rgb(15, 15, 15);
+    margin-bottom: 15px;
+}
+.bento_order{
+    padding: 10px;
+    background: #F5BF00;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Roboto';
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 23px;
+    color: #2F2E2E;
+    position:absolute;
+    bottom:0;
+    right: 0;
+    left: 0;
+
+    margin: 15px;
+}

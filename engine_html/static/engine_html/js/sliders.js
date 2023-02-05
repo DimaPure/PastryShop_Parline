@@ -9,17 +9,17 @@ $(document).ready(function(){
       adaptiveHeight: true,
       touchMove: true,
       centerMode: true,
-      initialSlide: 2
+      initialSlide: 2,
       // asNavFor:".slider-var-big",
       // Адаптив
-      // responsive:[
-      //   {
-      //     breakpoint: 640,
-      //     settings:{
-      //       slidesToShow: 2
-      //     }
-      //   }
-      // ]
+      responsive:[
+        {
+          breakpoint: 500,
+          settings:{
+            slidesToShow: 1
+          }
+        }
+      ]
     });
     // ----------------------------Большой слайдер-------------------------------
     // $('.slider-var-big').slick({

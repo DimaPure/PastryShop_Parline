@@ -3,6 +3,45 @@
 {%block title%}Галерея{%endblock%}
 
 {%block content%}
-<h1> Галерея</h1>
-<p> Примеры работ </p>
+<section class = 'content' id = "Gal">
+    {% load static %}
+    <div class="cont-colum">
+        <div class="gal-colum">
+            <div class="contfor-img">
+                <img class = "pic_gal" src = "{% static "engine_html/img/3.jpg" %}">
+            </div>
+            <div class="contfor-img" id = "big">
+                <img class = "pic_gal" src = "{% static "engine_html/img/2.jpg" %}">
+            </div>
+            <div class="contfor-img">
+                <img class = "pic_gal" src = "{% static "engine_html/img/13.jpg" %}">
+            </div>
+        </div>
+
+        <div class="gal-colum">
+            <div class="contfor-img">
+                <img class = "pic_gal" src = "{% static "engine_html/img/6.jpg" %}">
+            </div>
+            <div class="contfor-img">
+                <img class = "pic_gal" src = "{% static "engine_html/img/5.jpg" %}">
+            </div>
+            <div class="contfor-img" >
+                <img class = "pic_gal" src = "{% static "engine_html/img/7.jpg" %}">
+            </div>
+        </div>
+
+        <div class="gal-colum">
+            <div class="contfor-img" id = "big">
+                <img class = "pic_gal" src = "{% static "engine_html/img/cake1.jpg" %}">
+            </div>
+            <div class="contfor-img">
+                <img class = "pic_gal" src = "{% static "engine_html/img/14.jpg" %}">
+            </div>
+            <div class="contfor-img">
+                <img class = "pic_gal" src = "{% static "engine_html/img/cake2.jpg" %}">
+            </div>
+        </div>
+    </div>
+
+</section>
 {%endblock%}
