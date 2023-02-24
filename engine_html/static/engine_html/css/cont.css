@@ -39,6 +39,7 @@ input, textarea:-moz-placeholder {
 }
 .hi{
     padding: 10px;
+    margin-top: 10px;
 }
 .hi_sec{
     display: flex;
@@ -53,10 +54,12 @@ input, textarea:-moz-placeholder {
 }
 
 .form_area{
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 50%;
 }
 .form{
     display: flex;
@@ -105,7 +108,7 @@ input, textarea:-moz-placeholder {
     color: azure;
 }
 #textar{
-    height: 200px;
+    height: 150px;
     outline:none;
 }
 .buts{
@@ -123,6 +126,11 @@ input, textarea:-moz-placeholder {
     -webkit-appearance: none; 
     -moz-appearance: none; 
     appearance: none;
+    border: none;
+    margin: 5px;
+}
+.form-cont{
+    display: none;
 }
 
 [class*="copyrights-pane"] {
@@ -139,7 +147,7 @@ input, textarea:-moz-placeholder {
     }
     
 }
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1200px) {
     .cont-content{
         height: 60vh;
     
@@ -149,7 +157,7 @@ input, textarea:-moz-placeholder {
     
     }
     #title-f{
-        font-size: 10px;
+        font-size: 15px;
     }
     .inf{
         font-size: 50%;
@@ -161,15 +169,14 @@ input, textarea:-moz-placeholder {
     #textar{
         height: 100px;
     }
-    #textar::placeholder{
-        font-size: 10px;
-    }
     
     
 }
 @media only screen and (max-width: 1100px) {
-    .container-pole{
-        display: none;
+    .form-cont{
+       display:inline;
+       color:#F5BF00; 
+       text-decoration-line: underline;
     }
     .inf{
         font-size: 70%;
@@ -190,6 +197,27 @@ input, textarea:-moz-placeholder {
     .ic_par_cont{
         margin-top: 15px;
         left: 0;
-     }
+        margin-bottom: 10px;
+    }
+    #textar::placeholder{
+        font-size: 10px;
+    }
+    .container-pole{
+        display: none;
+    }
 
+}
+@media only screen and (max-width: 400px) {
+    .hi{
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+    .dash_c {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .form{
+        font-size: 10px;
+    }
 }

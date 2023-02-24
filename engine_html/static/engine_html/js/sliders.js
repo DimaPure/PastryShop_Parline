@@ -14,7 +14,7 @@ $(document).ready(function(){
       // Адаптив
       responsive:[
         {
-          breakpoint: 500,
+          breakpoint: 630,
           settings:{
             slidesToShow: 1
           }
@@ -28,4 +28,4 @@ $(document).ready(function(){
     //   centerMode: true,
     //   asNavFor:".slider-var"
     // });
-  })
+  });

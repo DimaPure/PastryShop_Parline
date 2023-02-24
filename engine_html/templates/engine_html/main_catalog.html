@@ -11,7 +11,7 @@
             <label class = "pod">создаю сладкие шедевры своими руками</label>
             <div class = "but_ssl">
                 <button class = "order">Заказать</button>
-                <a class = "vi" href = "#"><label class = "lab">Смотреть работы</label></a>
+                <a class = "vi" href = "/gallery"><label class = "lab">Смотреть работы</label></a>
             </div>
         </div>
     </div>
@@ -57,26 +57,29 @@
                 <div class="slider-var">
                   {% comment %} data-lazy вместо src для правильной загрузки изображений(подгрузка изображения только при использовании) {% endcomment %}
                   <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/2.jpg" alt="торт1"/>
+                    <label class = "title_cap">Классический-ванильный</label>
+                    <div class = 'dash2' id = "dash_cap"></div>
+                    <img class = "slider_photo_size" data-lazy  = "/static/engine_html/img/2.jpg" alt="торт1"/>
+                    <button class = "but" id = "1">Заказать</button>
+                  </div>
+                  <div class="slider_item">
+                    <label class = "title_cap">Красный бархат</label>
+                    <div class = 'dash2' id = "dash_cap"></div>
+                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/cap1.jpg" alt="торт2"/>
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/3.jpg" alt="торт2"/>
+                    <label class = "title_cap">Шоколадный</label>
+                    <div class = 'dash2' id = "dash_cap"></div>
+                    <img class = "slider_photo_size" src = "/static/engine_html/img/3.jpg" alt="торт3"/>
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/5.jpg" alt="торт3"/>
+                    <label class = "title_cap">Индивидуальный</label>
+                    <div class = 'dash2' id = "dash_cap"></div>
+                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/cap2.jpg" alt="торт3"/>
                     <button class = "but">Заказать</button>
                   </div>
-                  <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/5.jpg" alt="торт3"/>
-                    <button class = "but">Заказать</button>
-                  </div>
-                  <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/5.jpg" alt="торт3"/>
-                    <button class = "but">Заказать</button>
-                  </div>
-
                 </div>
 
                 <div class = 'dash2'></div>
@@ -88,7 +91,7 @@
                 <div class="slider-var">
                   {% comment %} data-lazy вместо src для правильной загрузки изображений(подгрузка изображения только при использовании) {% endcomment %}
                   <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/cake1.jpg" alt="торт1"/>
+                    <img class = "slider_photo_size" data-lazy  = "/static/engine_html/img/cake1.jpg" alt="торт1"/>
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
@@ -96,7 +99,7 @@
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/cake3.jpg" alt="торт3"/>
+                    <img class = "slider_photo_size" src = "/static/engine_html/img/cake3.jpg" alt="торт3"/>
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
@@ -127,7 +130,7 @@
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/12.jpg" alt="торт4"/>
+                    <img class = "slider_photo_size" src = "/static/engine_html/img/12.jpg" alt="торт4"/>
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
@@ -158,7 +161,7 @@
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/7.jpg" alt="торт4"/>
+                    <img class = "slider_photo_size" src = "/static/engine_html/img/7.jpg" alt="торт4"/>
                     <button class = "but">Заказать</button>
                   </div>
                   <div class="slider_item">
@@ -176,7 +179,7 @@
                 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
                 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
                 <script type="text/javascript" src="/static/engine_html/js/slick.min.js"></script>
-                <script src = "/static/engine_html/js/sliders.js"></script>
+                <script type="text/javascript" src = "/static/engine_html/js/sliders.js"></script>
         </div>
     
     </div>

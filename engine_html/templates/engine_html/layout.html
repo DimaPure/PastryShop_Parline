@@ -29,95 +29,150 @@
   </head>
 
   <body>
-    {% comment %} Шапка {% endcomment %}
-    <div class = 'fir_sec'>
-        
-      <div class= 'city'>
-        <div class= "text_head"><label>Волгоград</label></div>
-        <label class = 'down'></label>
-      </div>
+    <div class = "boxRem">
+      {% comment %} Шапка {% endcomment %}
+      <div class = 'fir_sec'>
+          
+        <div class= 'city'>
+          <div class= "text_head"><label>Волгоград</label></div>
+          <label class = 'down'></label>
+        </div>
 
-      <div class = 'dash'></div>
-      
-      <div class= 'entr'>
-        <div class= "text_head">Вход</div>
-        <label class = 'icon_entr'></label>
+        <div class = 'dash'></div>
+        
+        <div class= 'entr'>
+          <div class= "text_head">Вход</div>
+          <label class = 'icon_entr'></label>
+        </div>
+        
       </div>
       
+      <section class = 'header'>
+
+        <div class = 'second_sec'>
+          <img class = "ic_par" src = "/static/engine_html/icon/parline.png">
+          
+          <div class = 'men_search'>
+            <form class = 'search'>
+              <input type="search" class = "window_s"  placeholder="Поиск..." name = 's'> 
+              <button class = "bt_search" type="submit"></button>
+            </form>
+            <div class = "menu-burger">
+              <span>
+              </span>
+            </div>
+            <div class="nav_cont">
+              <nav id = 'menu'>
+                <ul class="navigation">
+                  <li class="no_space_left"><a href='/' class="nav-link">КАТАЛОГ</a></li>
+                  <li><a href="/price" class="nav-link">ПРАЙС</a></li>
+                  <li><a href="/gallery" class="nav-link">ГАЛЕРЕЯ</a></li>
+                  <li><a href="/reviews" class="nav-link">ОТЗЫВЫ</a></li>
+                  <li class="no_space_right"><a href="/cont" class="nav-link">КОНТАКТЫ</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          
+          <div class = 'icon_magaz'>
+            <img class = "ic_heart" src = "/static/engine_html/icon/heart.png">
+            <img class = "ic_corz" src = "/static/engine_html/icon/case.png">
+          </div>
+
+        </div>
+
+      </section>
+
+      {% comment %} Модалка {% endcomment %}
+      <div class = "popup_cont" id = "popup_cont">
+        <div class = "popup">
+          <div class = "container-pole2" id = "container-pole2">
+            <form action="#" class="form-click" id="form-click">
+
+              <div class="sec-cont"> 
+                  <div class = "exit_cont">
+                    <div class = "title-form" align = "center" style = "padding: 0 1em 1em 1em;"><strong id="title-f">Форма обратной связи</strong></div>
+                    <div class = 'exit' id = 'exit'>X</div>
+                  </div>
+                  <!-- Имя -->
+                  <div class="name data">
+                      <input tabindex="1" placeholder="Ваше ФИО" class="form_input" name="name">
+                  </div>
+                  <br>
+                  <!-- Мыло -->
+                  <div class="email data">
+                      <input tabindex="2" placeholder="Ваш e-mail" class="form_input" name="email">
+                  </div>
+                  <br>
+                  <!-- Телефон -->
+                  <div class="phone data">
+                      <input tabindex="3" placeholder="Ваш телефон" class="form_input" name="phone">
+                  </div>
+                  <br>
+                  <!-- Текст -->
+                  <textarea class = "form_input" id = "textar" placeholder = "Ваше сообщение"></textarea>
+              </div>
+                <!-- Кнопки -->
+              <div class="buts">
+                  <div class="but1">
+                      <button class="bt" id = "push" type="reset">ОЧИСТИТЬ</button>
+                  </div>
+                  <div class="but1">
+                      <button class="bt" type="submit">ОТПРАВИТЬ</button>
+                  </div>
+              </div>
+
+            </form>
+            
+          </div>
+        </div>
+      </div>
+      {% comment %} Модалка {% endcomment %}
+      
+      {% block content%}
+      {% endblock %}
+
+      {% comment %} Подвал {% endcomment %}
+      <section class = 'footer'>
+
+        <div class = 'one'>
+          <label class = 'light'>ОБО МНЕ</label>
+          <p class = "p_adapt" id = "about">
+            Меня зовут Алина. Я начинающий<br>
+            кондитер. Делаю тортики, капкейки<br> 
+            и другие десерты. Индивидульно<br>
+            подхожу к каждому заказу!
+          </p>
+        </div>
+
+        <div class = "vert_desh"></div>
+
+        <div class = 'two'>
+          <label class = 'light'>СОЦ-СЕТИ</label>
+          <div class = 'stack_ic'>
+            <a class = 'ic_mail' id = "raz" href =''><img class = "ic" src = "/static/engine_html/icon/mail.png"></a>
+            <a class = 'ic_inst' id = "raz" href =''><img class = "ic" src = "/static/engine_html/icon/inst.png"></a>
+            <a class = 'ic_vk' id = "raz" href =''><img class = "ic" src = "/static/engine_html/icon/vk.png"></a>
+          </div>
+        </div>
+
+        <div class = "vert_desh"></div>
+
+        <div class = 'three'>
+          <label class = 'light'>КОНТАКТЫ</label>
+          <p class = "p_adapt">
+            8-904-755-60-44<br>
+            Praline@mail.ru<br>
+            г. Волгоград
+          </p>
+        </div>
+
+      </section>
+
     </div>
-    
-    <section class = 'header'>
-
-      <div class = 'second_sec'>
-        <img class = "ic_par" src = "/static/engine_html/icon/parline.png">
-        
-        <div class = 'men_search'>
-          <form class = 'search'>
-            <input type="search" class = "window_s"  placeholder="Поиск..." name = 's'> 
-            <button class = "bt_search" type="submit"></button>
-          </form>
-          <nav id = 'menu'>
-            <ul class="navigation">
-              <li class="no_space_left"><a href='/' class="nav-link">КАТАЛОГ</a></li>
-              <li><a href="/price" class="nav-link">ПРАЙС</a></li>
-              <li><a href="/gallery" class="nav-link">ГАЛЕРЕЯ</a></li>
-              <li><a href="/reviews" class="nav-link">ОТЗЫВЫ</a></li>
-              <li class="no_space_right"><a href="/cont" class="nav-link">КОНТАКТЫ</a></li>
-            </ul>
-          </nav>
-        </div>
-        
-        <div class = 'icon_magaz'>
-          <img class = "ic_heart" src = "/static/engine_html/icon/heart.png">
-          <img class = "ic_corz" src = "/static/engine_html/icon/case.png">
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    {% block content%}
-    {% endblock %}
-
-    {% comment %} Подвал {% endcomment %}
-    <section class = 'footer'>
-
-      <div class = 'one'>
-        <label class = 'light'>ОБО МНЕ</label>
-        <p class = "p_adapt" id = "about">
-          Меня зовут Алина. Я начинающий<br>
-          кондитер. Делаю тортики, капкейки<br> 
-          и другие десерты. Индивидульно<br>
-          подхожу к каждому заказу!
-        </p>
-      </div>
-
-      <div class = "vert_desh"></div>
-
-      <div class = 'two'>
-        <label class = 'light'>СОЦ-СЕТИ</label>
-        <div class = 'stack_ic'>
-          <a class = 'ic_mail' id = "raz" href =''><img class = "ic" src = "/static/engine_html/icon/mail.png"></a>
-          <a class = 'ic_inst' id = "raz" href =''><img class = "ic" src = "/static/engine_html/icon/inst.png"></a>
-          <a class = 'ic_vk' id = "raz" href =''><img class = "ic" src = "/static/engine_html/icon/vk.png"></a>
-        </div>
-      </div>
-
-      <div class = "vert_desh"></div>
-
-      <div class = 'three'>
-        <label class = 'light'>КОНТАКТЫ</label>
-        <p class = "p_adapt">
-          8-904-755-60-44<br>
-          Praline@mail.ru<br>
-          г. Волгоград
-        </p>
-      </div>
-
-    </section>
-
-
+    <script src= "/static/engine_html/js/main.js"></script>
+    <script src="/static/engine_html/js/slick.min.js"></script>
+    <script src= "/static/engine_html/js/.js"></script>
+    <script type="text/javascript" src = "/static/engine_html/js/orders.js"></script>
   </body>
 </html>

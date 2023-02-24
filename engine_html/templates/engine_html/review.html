@@ -4,6 +4,36 @@
 
 {%block content%}
 <section class = 'content' id = "Rev">
-    <h1>Отзывы</h1>
+    <div class = "cont_all_rev">
+        {% comment %} Выгрузка отзывов если они есть {% endcomment %}
+        {%if reviews %}
+        <div class = "glav">Спасибо Вам за обратную связь</div>
+            {% for el in reviews %}
+                <div class = "rew_cont" id = "rev">
+                    <label class = "text-rev" id = "date">{{el.publication_date}}</label>
+                    <label class = "text-rev">{{el.name}}:</label>
+                    <p class = "text-rev-text">{{el.text_rev}}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+                <div class = "rew_cont">
+                    <p class = "non_rev">Вы, наш первый покупатель</p>
+                    <p class = "non_rev">Оставьте отзыв, это для нас очень важно</p>
+                    <p class = "non_rev">❤</p>
+                </div>
+        {% endif %}
+        {% comment %}--------------------------------{% endcomment %}
+
+        {% comment %} Запись отзыва {% endcomment %}
+        <div class="dash2" id = "dash-rev"></div>
+        <form method = "post" class = "form-rev">
+            <div class = "glav">Здесь вы можете оставить свой отзыв</div>
+            {% csrf_token %}
+            {{ form.name }}
+            {{ form.text_rev }}
+            <button type = "submit" class = "btn-rev">Добваить отзыв</button>
+            <span>{{ error }}</span>
+        </form>
+    </div>
 </section>
 {%endblock%}

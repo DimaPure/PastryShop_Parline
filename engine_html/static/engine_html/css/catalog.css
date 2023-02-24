@@ -276,6 +276,17 @@ label.title{
     margin: 0;
     padding: 0;
 }
+#dash_cap{
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+.title_cap{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Обработка формы продажи */
+
 
 @media only screen and (max-width: 1506px) { 
     .slider_photo_size{
@@ -297,7 +308,7 @@ label.title{
 }
 @media only screen and (max-width: 630px) { 
     .slider_photo_size{
-        width: 70px;
+        width: 200px;
     }
     .slider-var .slick-arrow{
         width: 20px;
@@ -318,12 +329,9 @@ label.title{
 
 }
 @media only screen and (max-width: 530px) { 
-    .slider_photo_size{
-        width: 70px;
-    }
     .slider-var .slick-arrow{
-        width: 20px;
-        height: 40px;
+        width: 40px;
+        height: 60px;
     }
     .but{
         padding: 6px;
@@ -339,8 +347,14 @@ label.title{
     li{
         padding: 5px;
     }
-
-
+    .slider-var .slick-arrow{
+        top: 38%;
+    }
+    label.lab{
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+    }
 }
 /* ------------------------------------------------------------------------------- */
 
