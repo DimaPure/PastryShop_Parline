@@ -119,8 +119,8 @@ input.window_s{
 }
 .bt_search{
     position: absolute; 
-    top: 0;
-    right: 0px;
+    top: -5px;
+    right: -5px;
     width: 40px;
     height: 40px;
     border: none;
@@ -341,7 +341,6 @@ li.no_space_right{
     .menu-burger {
         width: 20px; /* определяем размеры блока */
         height: 20px;
-        left: 10px;
     }
     .menu-burger span{
         top: 8px;

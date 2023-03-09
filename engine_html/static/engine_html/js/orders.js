@@ -1,12 +1,45 @@
+// Списки селектов
 const checkList = [
     "Вишня", "Ежевика", "Малина", "Клубника","Персик", "Карамель", "Банан", "Без начинки"
 ];
 const biscuitList = [
     'Ванильный','Шоколадный', 'Красный бархат'
 ];
+const coverList= ['Ганаш на белом шоколаде', 'Кремчиз'];
+
+
 const delivList = [
     "Доставка", "Самовывоз"
 ];
+
+
+const checkListTort = [
+    "Вишня", "Малина", "Клубника","Персик", "Карамель"
+];
+
+
+const ListCapVid = [
+    "Ванильный","Шоколадный","Лимонный","Апельсиновый","Медово-ягодный"
+];
+const ListCapFilling = [
+    "Малина","Клубника","Вишня","Карамель"
+];
+const ListCapHat = [
+    "Крем-чиз","Ганаш темный шоколад","Ганаш белый шоколад","Ганаш молочный шоколад"
+];
+const ColCapTrList = [
+    "4","6","9","12"
+];
+
+
+
+const ListTrVid = [
+    "Красный бархат","Груша-корица","Сникерс","Ягодный йогурт","Ягодный йогурт","Вишня-шоколад"
+];
+
+
+// ------------------------------------------------------------------------------------------------------
+
 
 
 function CreateBis(str,formOrd){
@@ -14,6 +47,7 @@ function CreateBis(str,formOrd){
     somebent.className = "form-div";
     const benDescription = document.createElement("div");
     benDescription.textContent = str;
+    benDescription.id = "var_inf";
     formOrd.append(somebent);
     somebent.append(benDescription);
 }
@@ -21,7 +55,8 @@ function CreateBis(str,formOrd){
 function ChoiceFir(str) {
     if (!str) return str;
     return str[0].toUpperCase() + str.slice(1);
-  };
+};
+
 function mask(event) {
     let matrix = "+7 (___)-___-__-__",
       i = 0,
@@ -40,6 +75,27 @@ function mask(event) {
     } else setCursorPosition(this.value.length, this);
 };
 
+function CreateCelect(text,id_sel,list,formOrd){
+    const celcont = document.createElement("div");
+    celcont.className = "form-div";
+    const celDescription = document.createElement("p");
+    celDescription.textContent = text;
+    formOrd.append(celcont);
+    celcont.append(celDescription);
+            
+    const selDel = document.createElement("select");
+    selDel.className = "form-input";
+    selDel.id = id_sel;
+    celcont.append(selDel);
+    // образование селектов
+    for (let del of list) {
+        const delLabel = document.createElement("option");
+        delLabel.textContent = ChoiceFir(del);
+        selDel.append(delLabel);
+    }
+}
+
+
 
 for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
     const someBut = document.getElementsByClassName('but')[i];
@@ -57,12 +113,13 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         if(someBut.id.includes('tort')){
             mainLabel.textContent = "Форма заказа Вашего тортика";
         }else if(someBut.id.includes('bent')){
-            mainLabel.textContent = "Форма заказа Вашего бенто-тортика";
-        }else if(someBut.id.includes('cup')){
-            mainLabel.textContent = "Форма заказа Вашего капкейка или трайфла";
+            mainLabel.textContent = "Форма заказа Вашего бенто - тортика";
+        }else if(someBut.id.includes('ind')){
+            mainLabel.textContent = "Форма заказа Ваших капкейков или трайфлов";
         }else{
             mainLabel.textContent = "Форма заказа Вашего наборчика";
         }
+        mainLabel.className = "mainLab";
         mainBox.append(mainLabel);
 
         // Форма
@@ -118,79 +175,44 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         data.className = "form-input";
         DATA.append(datadescript, data);
 
-            //Селект доставки
-        const delivery = document.createElement("div");
-        delivery.className = "form-div";
-        const deliveryDescription = document.createElement("p");
-        deliveryDescription.textContent = "Вид получения товара";
-        formOrd.append(delivery);
-        delivery.append(deliveryDescription);
-            
-        const selDel = document.createElement("select");
-        selDel.className = "form-input";
-        selDel.id = "delivery";
-        delivery.append(selDel);
-        // образование селектов
-        for (let del of delivList) {
-            const delLabel = document.createElement("option");
-            delLabel.textContent = ChoiceFir(del);
-            selDel.append(delLabel);
-        }
+        //Селект доставки
+        const deliv_vid = CreateCelect("Вид получение товара","deliv_vid",delivList,formOrd);
 
         // Содержимое заказа разных позиций
-            // Бенто
+            // Бенто-------------------------------------------------------------------------------------------------------------------------------------
         if (someBut.id.includes('bent')){
             if (someBut.id.includes('classic')){
-                CreateBis("Вы выбрали КЛАССИЧЕСКИЙ-ВАНИЛЬНЫЙ бисквит",formOrd);
+                CreateBis("Вы выбрали КЛАССИЧЕСКИЙ - ВАНИЛЬНЫЙ бисквит",formOrd);
                 const chBis = 'КЛАССИЧЕСКИЙ-ВАНИЛЬНЫЙ';
             } else if(someBut.id.includes('red')){
                 CreateBis("Вы выбрали КРАСНЫЙ БАРХАТ",formOrd);
                 const chBis = 'КРАСНЫЙ БАРХАТ';
             } else if(someBut.id.includes('black')){
-                CreateBis("Вы выбрали ШОКОЛАДНЫЙ бенто-торт",formOrd);
+                CreateBis("Вы выбрали ШОКОЛАДНЫЙ бенто - торт",formOrd);
                 const chBis = 'ШОКОЛАДНЫЙ';
             } else{
                 // Селект бисквита
-                const bis = document.createElement("div");
-                bis.className = "form-div";
-                const biscuitDescription = document.createElement("p");
-                biscuitDescription.textContent = "Выберите бисквит";
-                formOrd.append(bis);
-                bis.append(biscuitDescription);
-                    
-                const selBis = document.createElement("select");
-                selBis.className = "form-input";
-                selBis.id = "biscuit";
-                bis.append(selBis);
-                // образование селектов
-                for (let sel of biscuitList) {
-                    const selLabel = document.createElement("option");
-                    selLabel.textContent = ChoiceFir(sel);
-                    selBis.append(selLabel);
-                }
-                const chBis = selBis.value
-            }
+                const bisBent_vid = CreateCelect("Выберите бисквит","bisBent_vid",biscuitList,formOrd);
 
-            //Селект начинки
-            const filling = document.createElement("div");
-            filling.className = "form-div";
-            const fillingDescription = document.createElement("p");
-            fillingDescription.textContent = "Выберите начинку";
-            formOrd.append(filling);
-            filling.append(fillingDescription);
-                
-            const filDel = document.createElement("select");
-            filDel.className = "form-input";
-            filDel.id = "filling";
-            filling.append(filDel);
-            // образование селектов
-            for (let fil of checkList) {
-                const filLabel = document.createElement("option");
-                filLabel.textContent = ChoiceFir(fil);
-                filDel.append(filLabel);
+                //Селект начинки
+                const nachBent_vid = CreateCelect("Выберите начинку","nachBent_vid",checkList,formOrd);
             }
+            // Чекбокс сложного рисунка
+            const checkP = document.createElement("div");
+            checkP.className = "form-div checkbox";
+
+            const pictChecbox = document.createElement("input");
+            pictChecbox.type = "checkbox";
+            pictChecbox.className = "checkP";
+            pictChecbox.id = "pictCheckbox";
+
+            const pictLabel = document.createElement("label");
+            pictLabel.htmlFor = 'pictCheckbox';
+            pictLabel.textContent = "Сложный рисунок / портрет + 150р";
+            checkP.append(pictChecbox, pictLabel);
+            formOrd.append(checkP);
         }
-            // Торты
+            // Торты-------------------------------------------------------------------------------------------------------------------------------
         else if(someBut.id.includes('tort')){
             if (someBut.id.includes('straw')){
                 CreateBis(
@@ -199,29 +221,35 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                 );
                 const chTort = 'клубничный йогурт';
                  //Покрытие
-                const cover = document.createElement("div");
-                cover.className = "form-div";
-                const coverDescription = document.createElement("p");
-                coverDescription.textContent = "Выберите покрытие";
-                formOrd.append(cover);
-                cover.append(coverDescription);
-                    
-                const covDel = document.createElement("select");
-                covDel.className = "form-input";
-                covDel.id = "cover";
-                cover.append(covDel);
-                const coverList= ['Ганаш на белом шоколаде', 'Кремчиз'];
-                for (let cov of coverList) {
-                    const covLabel = document.createElement("option");
-                    covLabel.textContent = ChoiceFir(cov);
-                    covDel.append(covLabel);
-                }
+                const pokr_vid = CreateCelect("Выберите покрытие","pokr_vid",coverList,formOrd);
             }
             else if (someBut.id.includes('tort_black')){
                 CreateBis(
-                    "Нежный шоколад — 1450руб / 1кг (Шоколадные бисквиты, ганаш на белом шоколаде, шоколадный крем суфле, соленая карамель. Покрытие — ганаш)",
+                    "Вы выбрали Нежный шоколад — 1450руб / 1кг (Шоколадные бисквиты, ганаш на белом шоколаде, шоколадный крем суфле, соленая карамель. Покрытие — ганаш)",
                     formOrd
                 );
+            }
+            else if (someBut.id.includes('tort_citr')){
+                CreateBis(
+                    "Вы выбрали Апельсиновый взрыв — 1200 руб / 1кг (Апельсиновые бисквиты, Апельсиновая начинка, Крем чиз, Пропитка апельсиновый курд)",
+                    formOrd
+                );
+            }else if (someBut.id.includes('tort_malina')){
+                CreateBis(
+                    "Вы выбрали Малина-кокос – 1300 руб / 1кг (Кокосовые коржи, Малиновая начинка + кокосовый ганаш на белом шоколаде, Покрытие сырным кремом)",
+                    formOrd
+                );
+            }else if (someBut.id.includes('tort_cher')){
+                CreateBis(
+                    "Вы выбрали  Черника-лимон -1300руб / 1кг (Лимоные коржи, Черничное кремю + лимонный курд, Покрытие - кремчиз)",
+                    formOrd
+                );
+            }else{
+                // Селект бисквита
+                const bisTort_vid = CreateCelect("Выберите бисквит","bisTort_vid",biscuitList,formOrd);
+
+                //Селект начинки
+                const nachTort_vid = CreateCelect("Выберите вид начинки","nachTort_vid",checkListTort,formOrd);
             }
                 // Вес
             const weight = document.createElement("div");
@@ -234,12 +262,82 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
             weightTort.placeholder = "От 1,5кг";
             weightTort.className = "form-input";
             weight.append(weightDescription, weightTort);  
+        }
+            //Наборы-------------------------------------------------------------------------------------------------------------------------------------------------- 
+        else if(someBut.id.includes('set')){
+            if (someBut.id.includes('set_cap')){
+                const inf_set = CreateBis("Вы выбрали Бенто-торт + 3 КАПКЕЙКА",formOrd);
+                // Чекбокс рисунков
+                const checkP = document.createElement("div");
+                checkP.className = "form-div checkbox";
 
+                const pictChecbox = document.createElement("input");
+                pictChecbox.type = "checkbox";
+                pictChecbox.name = "dop"
+                pictChecbox.className = "checkP";
+                pictChecbox.id = "pictCheckbox";
 
-        }else if(someBut.id.includes('set')){
-            console.log('set')
-        }else if(someBut.id.includes('cup')){
-            console.log('cup')
+                const pictLabel = document.createElement("label");
+                pictLabel.htmlFor = 'pictCheckbox';
+                pictLabel.textContent = "С печатью Ваших картинок + 200р";
+                checkP.append(pictChecbox, pictLabel);
+                formOrd.append(checkP);
+
+                const cap_vid = CreateCelect("Выберите вид капкейков","capset_vid",ListCapVid,formOrd);
+                const cap_fil = CreateCelect("Выберите начинку","capset_fil",ListCapFilling,formOrd);
+                const cap_inf = CreateCelect("Выберите шапочку","capset_inf",ListCapHat,formOrd);
+            }else{
+                const inf_set = CreateBis("Вы выбрали Бенто-торт + 3 ТРАЙФЛА",formOrd);
+                const cap_vid = CreateCelect("Выберите вид трайфлов","trset_vid",ListTrVid,formOrd);
+            }
+            // Селект бисквита
+            const bisBent_vid = CreateCelect("Выберите бисквит бенто","bisBent_vid",biscuitList,formOrd);
+            //Селект начинки
+            const nachBent_vid = CreateCelect("Выберите начинку бенто","nachBent_vid",checkList,formOrd);
+
+            // Чекбокс сложного рисунка
+            const checkP = document.createElement("div");
+            checkP.className = "form-div checkbox";
+
+            const pictChecbox = document.createElement("input");
+            pictChecbox.type = "checkbox";
+            pictChecbox.className = "checkP";
+            pictChecbox.id = "pictCheckbox";
+
+            const pictLabel = document.createElement("label");
+            pictLabel.htmlFor = 'pictCheckbox';
+            pictLabel.textContent = "Сложный рисунок / портрет на бенто-тортике + 150р";
+            checkP.append(pictChecbox, pictLabel);
+            formOrd.append(checkP);
+        }
+            //Капкейки и трайфлы 
+        else if(someBut.id.includes('ind')){
+            if(someBut.id.includes('ind_cap')){
+                const inf_set = CreateBis("Вы выбрали КАПКЕЙКИ",formOrd);
+                // Чекбокс рисунков
+                const checkP = document.createElement("div");
+                checkP.className = "form-div checkbox";
+
+                const pictChecbox = document.createElement("input");
+                pictChecbox.type = "checkbox";
+                pictChecbox.name = "dop"
+                pictChecbox.className = "checkP";
+                pictChecbox.id = "pictCheckbox";
+
+                const pictLabel = document.createElement("label");
+                pictLabel.htmlFor = 'pictCheckbox';
+                pictLabel.textContent = "С печатью Ваших картинок + 200р";
+                checkP.append(pictChecbox, pictLabel);
+                formOrd.append(checkP);
+
+                const cap_vid = CreateCelect("Выберите вид капкейков","capset_vid",ListCapVid,formOrd);
+                const cap_fil = CreateCelect("Выберите начинку","capset_fil",ListCapFilling,formOrd);
+                const cap_inf = CreateCelect("Выберите шапочку","capset_inf",ListCapHat,formOrd);
+            }else if(someBut.id.includes('ind_tr')){
+                const inf_set = CreateBis("Вы выбрали ТРАЙФЛЫ",formOrd);
+                const cap_vid = CreateCelect("Выберите вид трайфлов","trset_vid",ListTrVid,formOrd);
+            }
+            const coll_captr = CreateCelect("Кол-во","coll_captr",ColCapTrList,formOrd);
         }
 
         // Доп пожелания
@@ -254,16 +352,11 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         txarea.className = "form-input";
         dream.append(dreamDescription, txarea);
 
-        // Кнопка оформить
+        // Кнопки
         const mainBoxCheckout = document.createElement("div");
         mainBoxCheckout.className = "box-button right";
         mainBox.append(mainBoxCheckout);
-        
-        const checkout = document.createElement("button");
-        checkout.className = "order_cake";
-        checkout.textContent = "Оформить";
-        checkout.type = "submit";
-        mainBoxCheckout.append(checkout);
+
         // Вернуться
         const backButton = document.createElement("button");
         backButton.className = "back";
@@ -273,5 +366,12 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
             mainWind.classList.remove("none");
         });
         mainBoxCheckout.append(backButton);
+
+        // Кнопка оформить
+        const checkout = document.createElement("button");
+        checkout.className = "order_cake";
+        checkout.textContent = "Оформить";
+        checkout.type = "submit";
+        mainBoxCheckout.append(checkout);
     }
 }

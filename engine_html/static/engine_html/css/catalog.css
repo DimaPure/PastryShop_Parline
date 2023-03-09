@@ -310,10 +310,6 @@ label.title{
     .slider_photo_size{
         width: 200px;
     }
-    .slider-var .slick-arrow{
-        width: 20px;
-        height: 40px;
-    }
     .but{
         padding: 6px;
         font-size: 12px;
@@ -332,6 +328,8 @@ label.title{
     .slider-var .slick-arrow{
         width: 40px;
         height: 60px;
+        top: 40%;
+
     }
     .but{
         padding: 6px;
@@ -346,9 +344,6 @@ label.title{
     }
     li{
         padding: 5px;
-    }
-    .slider-var .slick-arrow{
-        top: 38%;
     }
     label.lab{
         -moz-hyphens: auto;

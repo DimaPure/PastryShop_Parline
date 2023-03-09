@@ -9,7 +9,7 @@ $(document).ready(function(){
       adaptiveHeight: true,
       touchMove: true,
       centerMode: true,
-      initialSlide: 2,
+      initialSlide: 1,
       // asNavFor:".slider-var-big",
       // Адаптив
       responsive:[
