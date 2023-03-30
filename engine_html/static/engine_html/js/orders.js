@@ -38,10 +38,7 @@ const ListTrVid = [
 ];
 
 
-// ------------------------------------------------------------------------------------------------------
-
-
-
+// Функции ------------------------------------------------------------------------------------------------------
 function CreateBis(str,formOrd){
     const somebent = document.createElement("div");
     somebent.className = "form-div";
@@ -96,7 +93,8 @@ function CreateCelect(text,id_sel,list,formOrd){
 }
 
 
-
+// Главные функции --------------------------------------------------------------------------------------------------------------------
+    // Заказать
 for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
     const someBut = document.getElementsByClassName('but')[i];
     someBut.onclick = function (){
@@ -139,6 +137,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         const dude = document.createElement("input");
         dude.placeholder = "Введите своё имя";
         dude.className = "form-input";
+        dude.name = "name";
         FIO.append(peopleDescription, dude);
        
             // Номер
@@ -149,6 +148,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         const phoneNumberDescription = document.createElement("p");
         phoneNumberDescription.textContent = "Номер телефона";
         const phoneNumber = document.createElement("input");
+        phoneNumber.name = "phone";
         phoneNumber.placeholder = "+7 (999)-999-99-99";
         phoneNumber.className = "form-input";
         phoneNumber.name = "phone";
@@ -171,6 +171,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
             datadescript.textContent = "Дата и время приготовления Вашего заказа (приготовление возможно в день заказа)";
         }
         const data = document.createElement("input");
+        data.name = "date";
         data.placeholder = "00/00/0000 00:00";
         data.className = "form-input";
         DATA.append(datadescript, data);
@@ -182,15 +183,13 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
             // Бенто-------------------------------------------------------------------------------------------------------------------------------------
         if (someBut.id.includes('bent')){
             if (someBut.id.includes('classic')){
-                CreateBis("Вы выбрали КЛАССИЧЕСКИЙ - ВАНИЛЬНЫЙ бисквит",formOrd);
-                const chBis = 'КЛАССИЧЕСКИЙ-ВАНИЛЬНЫЙ';
+                CreateBis("Вы выбрали КЛАССИЧЕСКИЙ-ВАНИЛЬНЫЙ бенто",formOrd);
             } else if(someBut.id.includes('red')){
-                CreateBis("Вы выбрали КРАСНЫЙ БАРХАТ",formOrd);
-                const chBis = 'КРАСНЫЙ БАРХАТ';
+                CreateBis("Вы выбрали бенто КРАСНЫЙ БАРХАТ",formOrd);
             } else if(someBut.id.includes('black')){
-                CreateBis("Вы выбрали ШОКОЛАДНЫЙ бенто - торт",formOrd);
-                const chBis = 'ШОКОЛАДНЫЙ';
+                CreateBis("Вы выбрали ШОКОЛАДНЫЙ бенто",formOrd);
             } else{
+                CreateBis("Вы выбрали ИНДИВИДУАЛЬНЫЙ бенто тортик",formOrd);
                 // Селект бисквита
                 const bisBent_vid = CreateCelect("Выберите бисквит","bisBent_vid",biscuitList,formOrd);
 
@@ -216,7 +215,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         else if(someBut.id.includes('tort')){
             if (someBut.id.includes('straw')){
                 CreateBis(
-                    "Вы выбрали КЛУБНИЧНЫЙ ЙОГУРТ - 1300руб / 1кг (Ванильные бисквиты, клубничный крем суфле, клубничная начинка, ганаш на белом шоколаде)",
+                    "Вы выбрали торт - КЛУБНИЧНЫЙ ЙОГУРТ",
                     formOrd
                 );
                 const chTort = 'клубничный йогурт';
@@ -225,26 +224,30 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
             }
             else if (someBut.id.includes('tort_black')){
                 CreateBis(
-                    "Вы выбрали Нежный шоколад — 1450руб / 1кг (Шоколадные бисквиты, ганаш на белом шоколаде, шоколадный крем суфле, соленая карамель. Покрытие — ганаш)",
+                    "Вы выбрали торт - Нежный шоколад",
                     formOrd
                 );
             }
             else if (someBut.id.includes('tort_citr')){
                 CreateBis(
-                    "Вы выбрали Апельсиновый взрыв — 1200 руб / 1кг (Апельсиновые бисквиты, Апельсиновая начинка, Крем чиз, Пропитка апельсиновый курд)",
+                    "Вы выбрали торт - Апельсиновый взрыв",
                     formOrd
                 );
             }else if (someBut.id.includes('tort_malina')){
                 CreateBis(
-                    "Вы выбрали Малина-кокос – 1300 руб / 1кг (Кокосовые коржи, Малиновая начинка + кокосовый ганаш на белом шоколаде, Покрытие сырным кремом)",
+                    "Вы выбрали торт - Малина-кокос",
                     formOrd
                 );
             }else if (someBut.id.includes('tort_cher')){
                 CreateBis(
-                    "Вы выбрали  Черника-лимон -1300руб / 1кг (Лимоные коржи, Черничное кремю + лимонный курд, Покрытие - кремчиз)",
+                    "Вы выбрали торт - Черника-лимон",
                     formOrd
                 );
             }else{
+                CreateBis(
+                    "Вы выбрали ИНДИВИДУАЛЬНЫЙ торт",
+                    formOrd
+                );
                 // Селект бисквита
                 const bisTort_vid = CreateCelect("Выберите бисквит","bisTort_vid",biscuitList,formOrd);
 
@@ -261,6 +264,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
             const weightTort = document.createElement("input");
             weightTort.placeholder = "От 1,5кг";
             weightTort.className = "form-input";
+            weightTort.id = "weightTort";
             weight.append(weightDescription, weightTort);  
         }
             //Наборы-------------------------------------------------------------------------------------------------------------------------------------------------- 
@@ -348,6 +352,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         const dreamDescription = document.createElement("p");
         dreamDescription.textContent = "Ваши пожелания к заказу";
         const txarea = document.createElement("textarea");
+        txarea.name = "text";
         txarea.placeholder = "Коментарии к заказу";
         txarea.className = "form-input";
         dream.append(dreamDescription, txarea);
@@ -373,5 +378,183 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         checkout.textContent = "Оформить";
         checkout.type = "submit";
         mainBoxCheckout.append(checkout);
-    }
+
+        // Отправка на форм сервер ---------------------------------------------------------------------------------------------------------------------------
+        checkout.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            let name = dude.value;
+            let phone = phoneNumber.value;
+            let date = data.value;
+            let text = txarea.value;
+            let deliv = document.getElementById('deliv_vid').value;
+            let product = document.getElementById('var_inf').textContent.slice(11);
+            let weightTort = 
+            console.log(product);
+            
+            // Бенто --------------------------------------------------------------
+            if(product.includes('ИНДИВИДУАЛЬНЫЙ бенто')){
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                let hardPicture = document.getElementById('pictCheckbox').checked;
+                if (hardPicture == true){
+                    hardPicture = 'Заказ со сложным рисунком'
+                }else{
+                    hardPicture = 'Без сложного рисунка'
+                }
+
+                // Селекты
+                let bisc_vid = document.getElementById('bisBent_vid').value;
+                let fil_vid = document.getElementById('nachBent_vid').value;
+
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "hardPicture": hardPicture,
+                        "bisc_vid": bisc_vid,
+                        "fil_vid": fil_vid,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся")
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+            }else if (product.includes('бенто')){
+                let hardPicture = document.getElementById('pictCheckbox').checked;
+                if (hardPicture == true){
+                    hardPicture = 'Заказ со сложным рисунком'
+                }else{
+                    hardPicture = 'Без сложного рисунка'
+                }
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "hardPicture": hardPicture,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся")
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+                // Торты---------------------------------------
+            }else if(product.includes('ИНДИВИДУАЛЬНЫЙ торт')){
+                let bisTort_vid = document.getElementById('bisTort_vid').value;
+                let filTort_vid = document.getElementById('nachTort_vid').value;
+                let weightTort = document.getElementById('weightTort').value;
+
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "bisTort_vid": bisTort_vid,
+                        "filTort_vid": filTort_vid,
+                        "weightTort": weightTort,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся")
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+            }else if(product.includes('КЛУБНИЧНЫЙ ЙОГУРТ')){
+                let weightTort = document.getElementById('weightTort').value;
+                let ganash_vid = document.getElementById('pokr_vid').value; 
+
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "weightTort": weightTort,
+                        "ganash_vid": ganash_vid,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+            }
+            else if(product.includes('торт')){
+                let weightTort = document.getElementById('weightTort').value;
+
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "weightTort": weightTort,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+            }
+
+
+
+
+        });
+
+
+    };
+
+    
 }

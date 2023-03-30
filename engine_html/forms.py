@@ -1,5 +1,6 @@
 from .models import Review
 from django.forms import ModelForm, TextInput, Textarea
+from django import forms
 
 
 class ReviewForm(ModelForm):
