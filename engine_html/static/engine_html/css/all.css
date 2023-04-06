@@ -107,6 +107,11 @@ body{
     justify-content: center;
     font-family: 'Roboto';
 }
+
+.boxRemActive.renderPush{
+    background: rgb(72, 72, 72) url('/static/engine_html/img/render.gif') center /70px no-repeat;
+    transition: 0.5s ease 0s;
+}
 .mainLab{
     font-style: normal;
     font-weight: 900;
@@ -115,9 +120,17 @@ body{
     font-size: calc(15px + 16 * (100vw / 1280));
     text-align: center;
 }
+.mainLab.hidLab{
+    visibility: hidden;
+    opacity: 0;
+}
 .formOrd{
     overflow-y: auto;
     overflow-x: hidden;
+}
+.formOrd.hidForm{
+    visibility: hidden;
+    opacity: 0;
 }
 .formOrd input, textarea{
     width: 100%;
@@ -202,6 +215,21 @@ button{
     background-color: #000000;
     font-weight: 700;
 }
+.box-button.hidBut{
+    visibility: hidden;
+    opacity: 0;
+}
+button.hidBut{
+    visibility: hidden;
+}
+.err{
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 100px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+}
 @media only screen and (max-width: 1000px) { 
     .boxRemActive{
         overflow-y: auto;
@@ -225,6 +253,9 @@ button{
     }
     select, .checkbox, button, #var_inf{
        font-size: 10px;
+    }
+    .err{
+        font-size: 50px;
     }
 
 }

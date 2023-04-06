@@ -8,4 +8,5 @@ urlpatterns = [
     path('gallery', views.gallerys),
     path('reviews', views.reviews),
     path('cont', views.cont),
+    path('error', views.error),
 ]

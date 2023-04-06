@@ -4,6 +4,7 @@ from .models import Review
 from .forms import ReviewForm
 from django.views.decorators.csrf import csrf_protect
 from django.http import JsonResponse
+from engine_html.pushEmFunc import *
 
 
 @csrf_protect
@@ -23,32 +24,67 @@ def main(request):
     bisTort_vid = request.POST.get('bisTort_vid', None)
     filTort_vid = request.POST.get('filTort_vid', None)
     ganash_vid = request.POST.get('ganash_vid', None)
+    # Наборы, капкейки и трайфлы
+    capset_vid = request.POST.get('capset_vid', None)
+    capset_fil = request.POST.get('capset_fil', None)
+    hat_cap = request.POST.get('hat_cap', None)
+    coll_cap = request.POST.get('coll_cap', None)
+    bisBent_set = request.POST.get('bisBent_set', None)
+    nachBent_set = request.POST.get('nachBent_set', None)
+    printPicture = request.POST.get('printPicture', None)
 
-    if name:
-        # Any process that you want
-        data = {
-            'answer': 'oke',
-        }
-        print(name, phone, date, deliv, product, hardPicture, text, bisc_vid,
-              fil_vid, weightTort, bisTort_vid, filTort_vid, ganash_vid)
-        return JsonResponse(data)
+    trset_vid = request.POST.get('trset_vid', None)
 
-    # my_email = "chistohin1@mail.ru"
-    # try:
-    #     send_mail(name,
-    #               phone,
-    #               date,
-    #               text,
-    #               my_email, [
-    #                   'chistohin1@mail.ru',
-    #               ],
-    #               fail_silently=False)
-    #     return render(request, "engine_html/main_catalog.html",
-    #                   {'name_ms': name})
-    # except:
-    #     war = "Ваш заказ не оформлен, сделайте заказ по телефону ......, извините за временные неудобства!"
-    #     return render(request, "engine_html/main_catalog.html",
-    #                   {'warning': war})
+    if request.method == "POST":
+        if 'ИНДИВИДУАЛЬНЫЙ бенто' in product:
+            constrEmail_indBent(name, product, phone, date, deliv, bisc_vid,
+                                fil_vid, hardPicture, text, request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+        elif 'бенто' in product:
+            constrEmail_bent(name, product, phone, date, deliv, hardPicture,
+                             text, request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+        elif 'ИНДИВИДУАЛЬНЫЙ торт' in product:
+            constrEmail_indTort(name, product, phone, date, deliv, bisTort_vid,
+                                filTort_vid, weightTort, text, request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+        elif 'КЛУБНИЧНЫЙ ЙОГУРТ' in product:
+            constrEmail_RedTort(name, product, phone, date, deliv, weightTort,
+                                ganash_vid, text, request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+        elif 'торт' in product:
+            constrEmail_Tort(name, product, phone, date, deliv, weightTort,
+                             text, request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+        elif 'КАПКЕЙКА' in product:
+            constrEmail_setCap(name, product, phone, date, deliv, hardPicture,
+                               printPicture, capset_vid, capset_fil, hat_cap,
+                               bisBent_set, nachBent_set, text, request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+        elif 'ТРАЙФЛА' in product:
+            constrEmail_setTR(name, product, phone, date, deliv, hardPicture,
+                              trset_vid, bisBent_set, nachBent_set, text,
+                              request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+        elif 'КАПКЕЙКИ' in product:
+            constrEmail_CAP(name, product, phone, date, deliv, printPicture,
+                            capset_vid, capset_fil, hat_cap, coll_cap, text,
+                            request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+        elif 'ТРАЙФЛЫ' in product:
+            constrEmail_TR(name, product, phone, date, deliv, coll_cap,
+                           trset_vid, text, request)
+            data = {'answer': 'oke'}
+            return JsonResponse(data)
+
     else:
         return render(request, "engine_html/main_catalog.html", {})
 
@@ -85,3 +121,7 @@ def reviews(request):
             'form': form,
             'error': error
         })
+
+
+def error(request):
+    return render(request, 'engine_html/error.html')

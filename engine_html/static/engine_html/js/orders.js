@@ -91,6 +91,10 @@ function CreateCelect(text,id_sel,list,formOrd){
         selDel.append(delLabel);
     }
 }
+function main(mainWind, mainBox){
+    mainBox.remove();
+    mainWind.classList.remove("none");
+}
 
 
 // Главные функции --------------------------------------------------------------------------------------------------------------------
@@ -270,7 +274,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
             //Наборы-------------------------------------------------------------------------------------------------------------------------------------------------- 
         else if(someBut.id.includes('set')){
             if (someBut.id.includes('set_cap')){
-                const inf_set = CreateBis("Вы выбрали Бенто-торт + 3 КАПКЕЙКА",formOrd);
+                const inf_set = CreateBis("Вы выбрали НАБОР - Бенто + 3 КАПКЕЙКА",formOrd);
                 // Чекбокс рисунков
                 const checkP = document.createElement("div");
                 checkP.className = "form-div checkbox";
@@ -279,10 +283,10 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                 pictChecbox.type = "checkbox";
                 pictChecbox.name = "dop"
                 pictChecbox.className = "checkP";
-                pictChecbox.id = "pictCheckbox";
+                pictChecbox.id = "pictCheckbox2";
 
                 const pictLabel = document.createElement("label");
-                pictLabel.htmlFor = 'pictCheckbox';
+                pictLabel.htmlFor = 'pictCheckbox2';
                 pictLabel.textContent = "С печатью Ваших картинок + 200р";
                 checkP.append(pictChecbox, pictLabel);
                 formOrd.append(checkP);
@@ -291,7 +295,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                 const cap_fil = CreateCelect("Выберите начинку","capset_fil",ListCapFilling,formOrd);
                 const cap_inf = CreateCelect("Выберите шапочку","capset_inf",ListCapHat,formOrd);
             }else{
-                const inf_set = CreateBis("Вы выбрали Бенто-торт + 3 ТРАЙФЛА",formOrd);
+                const inf_set = CreateBis("Вы выбрали НАБОР - Бенто + 3 ТРАЙФЛА",formOrd);
                 const cap_vid = CreateCelect("Выберите вид трайфлов","trset_vid",ListTrVid,formOrd);
             }
             // Селект бисквита
@@ -326,10 +330,10 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                 pictChecbox.type = "checkbox";
                 pictChecbox.name = "dop"
                 pictChecbox.className = "checkP";
-                pictChecbox.id = "pictCheckbox";
+                pictChecbox.id = "pictCheckbox2";
 
                 const pictLabel = document.createElement("label");
-                pictLabel.htmlFor = 'pictCheckbox';
+                pictLabel.htmlFor = 'pictCheckbox2';
                 pictLabel.textContent = "С печатью Ваших картинок + 200р";
                 checkP.append(pictChecbox, pictLabel);
                 formOrd.append(checkP);
@@ -378,10 +382,18 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
         checkout.textContent = "Оформить";
         checkout.type = "submit";
         mainBoxCheckout.append(checkout);
+        
+        
 
-        // Отправка на форм сервер ---------------------------------------------------------------------------------------------------------------------------
+        // Отправка форм на сервер ---------------------------------------------------------------------------------------------------------------------------
         checkout.addEventListener("click", function (e) {
             e.preventDefault();
+
+            mainBox.classList.add("renderPush");
+            formOrd.classList.add("hidForm");
+            document.querySelector('.box-button').classList.add('hidBut');
+            document.querySelector('.mainLab').classList.add('hidLab');
+
 
             let name = dude.value;
             let phone = phoneNumber.value;
@@ -389,8 +401,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
             let text = txarea.value;
             let deliv = document.getElementById('deliv_vid').value;
             let product = document.getElementById('var_inf').textContent.slice(11);
-            let weightTort = 
-            console.log(product);
+            
             
             // Бенто --------------------------------------------------------------
             if(product.includes('ИНДИВИДУАЛЬНЫЙ бенто')){
@@ -424,7 +435,8 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                     dataType: "json",
                     success: function (data) {
                         // any process in data
-                        alert("Спасибо за заказ, в скором времени с Вами свяжутся")
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
                     },
                     failure: function () {
                         alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
@@ -454,12 +466,15 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                     dataType: "json",
                     success: function (data) {
                         // any process in data
-                        alert("Спасибо за заказ, в скором времени с Вами свяжутся")
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
                     },
                     failure: function () {
                         alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
                     }
                 });
+                
+                
                 // Торты---------------------------------------
             }else if(product.includes('ИНДИВИДУАЛЬНЫЙ торт')){
                 let bisTort_vid = document.getElementById('bisTort_vid').value;
@@ -485,7 +500,8 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                     dataType: "json",
                     success: function (data) {
                         // any process in data
-                        alert("Спасибо за заказ, в скором времени с Вами свяжутся")
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
                     },
                     failure: function () {
                         alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
@@ -514,6 +530,7 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                     success: function (data) {
                         // any process in data
                         alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
                     },
                     failure: function () {
                         alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
@@ -541,6 +558,178 @@ for(var i = 0; i < document.getElementsByClassName('but').length; i++) {
                     success: function (data) {
                         // any process in data
                         alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+
+                // Наборы ----------------------------------------------------------------------------------------------
+            }else if(product.includes('КАПКЕЙКА')){
+                let capset_vid = document.getElementById('capset_vid').value;
+                let capset_fil = document.getElementById('capset_fil').value;
+                let hat_cap = document.getElementById('capset_inf').value;
+
+                let bisBent_set = document.getElementById('bisBent_vid').value;
+                let nachBent_set = document.getElementById('nachBent_vid').value;
+
+
+                // Печать картинок
+                let printPicture = document.getElementById('pictCheckbox2').checked;
+                if (printPicture == true){
+                    printPicture = 'С печатью картинок'
+                }else{
+                    printPicture = 'Без печати картинок'
+                }
+                // Рисунок бенто
+                let hardPicture = document.getElementById('pictCheckbox').checked;
+                if (hardPicture == true){
+                    hardPicture = 'Заказ со сложным рисунком'
+                }else{
+                    hardPicture = 'Без сложного рисунка'
+                }
+
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "hardPicture": hardPicture,
+                        "printPicture": printPicture,
+                        "capset_vid":  capset_vid,
+                        "capset_fil": capset_fil,
+                        "hat_cap": hat_cap,
+                        "bisBent_set": bisBent_set,
+                        "nachBent_set": nachBent_set,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+            }else if(product.includes('ТРАЙФЛА')){
+                let trset_vid = document.getElementById('trset_vid').value;
+                
+
+                let bisBent_set = document.getElementById('bisBent_vid').value;
+                let nachBent_set = document.getElementById('nachBent_vid').value;
+                // Рисунок бенто
+                let hardPicture = document.getElementById('pictCheckbox').checked;
+                if (hardPicture == true){
+                    hardPicture = 'Заказ со сложным рисунком'
+                }else{
+                    hardPicture = 'Без сложного рисунка'
+                }
+
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "hardPicture": hardPicture,
+                        "trset_vid":  trset_vid,
+                        "bisBent_set": bisBent_set,
+                        "nachBent_set": nachBent_set,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+
+
+                // Другие сладости--------------------------------------------------------------------------------------------
+            }else if(product.includes('КАПКЕЙКИ')){
+                let capset_vid = document.getElementById('capset_vid').value;
+                let capset_fil = document.getElementById('capset_fil').value;
+                let hat_cap = document.getElementById('capset_inf').value;
+                let coll_cap = document.getElementById('coll_captr').value;
+
+                // Печать картинок
+                let printPicture = document.getElementById('pictCheckbox2').checked;
+                if (printPicture == true){
+                    printPicture = 'С печатью картинок'
+                }else{
+                    printPicture = 'Без печати картинок'
+                }
+
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "printPicture": printPicture,
+                        "capset_vid":  capset_vid,
+                        "capset_fil": capset_fil,
+                        "hat_cap": hat_cap,
+                        "coll_cap": coll_cap
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
+                    },
+                    failure: function () {
+                        alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
+                    }
+                });
+            }else if(product.includes('ТРАЙФЛЫ')){
+                let coll_cap = document.getElementById('coll_captr').value;
+                let trset_vid = document.getElementById('trset_vid').value;
+
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                $.ajax({
+                    type: "POST",
+                    headers: { "X-CSRFToken": csrftoken },
+                    url: '/mainCake',
+                    data: {
+                        "name": name,
+                        "phone":phone,
+                        "date": date, 
+                        "text": text,
+                        "deliv": deliv,
+                        "product": product,
+                        "coll_cap": coll_cap,
+                        "trset_vid": trset_vid,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // any process in data
+                        alert("Спасибо за заказ, в скором времени с Вами свяжутся!")
+                        main(mainWind, mainBox)
                     },
                     failure: function () {
                         alert("Технические неполадки, пожалуйста, сделайте заказ по телефону! Извините за неудобства...");
