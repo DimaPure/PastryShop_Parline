@@ -96,6 +96,9 @@
     position: relative;
     right: 4%;
 }
+.men_search.top_men{
+    bottom: 0.6em;
+}
 
 .navigation{
     display: flex;
@@ -141,6 +144,9 @@ input.window_s{
     align-items: center;
     position: relative;
     right: 8.5%;
+}
+.icon_magaz.magaz{
+    bottom: 0.3em;
 }
 input::placeholder {
     color: #000000;

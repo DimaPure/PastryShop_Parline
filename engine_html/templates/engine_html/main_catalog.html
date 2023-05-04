@@ -10,7 +10,7 @@
             <label id = "glav_text">Вкуснейшие<br> десерты на заказ</label>
             <label class = "pod">создаю сладкие шедевры своими руками</label>
             <div class = "but_ssl">
-                <button class = "order">Заказать</button>
+                <button class = "order" id = "push_down">Заказать</button>
                 <a class = "vi" href = "/gallery"><label class = "lab">Смотреть работы</label></a>
             </div>
         </div>
@@ -65,13 +65,13 @@
                   <div class="slider_item">
                     <label class = "title_cap">Красный бархат</label>
                     <div class = 'dash2' id = "dash_cap"></div>
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/cap1.jpg" alt="торт2"/>
+                    <img class = "slider_photo_size" src = "/static/engine_html/img/cap1.jpg" alt="торт2"/>
                     <button class = "but"  id = "bent_red">Заказать</button>
                   </div>
                   <div class="slider_item">
                     <label class = "title_cap">Шоколадный</label>
                     <div class = 'dash2' id = "dash_cap"></div>
-                    <img class = "slider_photo_size" src = "/static/engine_html/img/3.jpg" alt="торт3"/>
+                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/3.jpg" alt="торт3"/>
                     <button class = "but"  id = "bent_black">Заказать</button>
                   </div>
                   <div class="slider_item">
@@ -85,7 +85,7 @@
                 <div class = 'dash2'></div>
 
                 <div class = "cont_lab">
-                  <label class="title">ТОРТЫ</label>
+                  <label class="title" id = "select_order">ТОРТЫ</label>
                 </div>
 
                 <div class="slider-var">
@@ -99,13 +99,13 @@
                   <div class="slider_item">
                     <label class = "title_cap">Нежный шоколад</label>
                     <div class = 'dash2' id = "dash_cap"></div>
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/cake2.jpg" alt="торт2"/>
+                    <img class = "slider_photo_size" src = "/static/engine_html/img/cake2.jpg" alt="торт2"/>
                     <button class = "but" id = "tort_black">Заказать</button>
                   </div>
                   <div class="slider_item">
                     <label class = "title_cap">Апельсиновый взрыв</label>
                     <div class = 'dash2' id = "dash_cap"></div>
-                    <img class = "slider_photo_size" src = "/static/engine_html/img/111.jpg" alt="торт3"/>
+                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/111.jpg" alt="торт3"/>
                     <button class = "but" id = "tort_citr">Заказать</button>
                   </div>
                   <div class="slider_item">
@@ -146,13 +146,13 @@
                   <div class="slider_item">
                     <label class = "title_cap">БЕНТО + 3 ТРАЙФЛА</label>
                     <div class = 'dash2' id = "dash_cap"></div>
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/13.jpg" alt="торт5"/>
+                    <img class = "slider_photo_size" src = "/static/engine_html/img/13.jpg" alt="торт5"/>
                     <button class = "but" id = "set_tr">Заказать</button>
                   </div>
                   <div class="slider_item">
                     <label class = "title_cap">Soon</label>
                     <div class = 'dash2' id = "dash_cap"></div>
-                    <img class = "slider_photo_size" src = "/static/engine_html/img/contained.jpg" alt="торт4"/>
+                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/contained.jpg" alt="торт4"/>
                   </div>
                   <div class="slider_item">
                     <label class = "title_cap">Soon</label>
@@ -184,13 +184,13 @@
                   <div class="slider_item">
                     <label class = "title_cap">ТРАЙФЛЫ</label>
                     <div class = 'dash2' id = "dash_cap"></div>
-                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/14.jpg" alt="торт5"/>
+                    <img class = "slider_photo_size" src = "/static/engine_html/img/14.jpg" alt="торт5"/>
                     <button class = "but" id = "ind_tr">Заказать</button>
                   </div>
                   <div class="slider_item">
                     <label class = "title_cap">Soon</label>
                     <div class = 'dash2' id = "dash_cap"></div>
-                    <img class = "slider_photo_size" src = "/static/engine_html/img/contained.jpg" alt="торт4"/>
+                    <img class = "slider_photo_size" data-lazy = "/static/engine_html/img/contained.jpg" alt="торт4"/>
                   </div>
                   <div class="slider_item">
                     <label class = "title_cap">Soon</label>
@@ -214,6 +214,7 @@
         </div>
     
     </div>
+    <script src = "/static/engine_html/js/search.js"></script>
 </section>
 
 {%endblock%}

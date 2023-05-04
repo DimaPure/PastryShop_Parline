@@ -196,7 +196,7 @@ def constrEmail_setCap(name, product, phone, date, deliv, hardPicture,
 
 # Сет Трайфлы
 def constrEmail_setTR(name, product, phone, date, deliv, hardPicture,
-                    trset_vid, bisBent_set, nachBent_set, text, request):
+                      trset_vid, bisBent_set, nachBent_set, text, request):
     result_text = f"""Клиент {name} делает заказ!
 
 - Товар: {product} 
@@ -225,7 +225,8 @@ def constrEmail_setTR(name, product, phone, date, deliv, hardPicture,
             fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
-    
+
+
 # Капкейки
 def constrEmail_CAP(name, product, phone, date, deliv, printPicture,
                     capset_vid, capset_fil, hat_cap, coll_cap, text, request):
@@ -258,10 +259,11 @@ def constrEmail_CAP(name, product, phone, date, deliv, printPicture,
             fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
-    
+
+
 # Трайфлы
-def constrEmail_TR(name, product, phone, date, deliv, coll_cap,
-                    trset_vid, text, request):
+def constrEmail_TR(name, product, phone, date, deliv, coll_cap, trset_vid,
+                   text, request):
     result_text = f"""Клиент {name} делает заказ!
 
 - Товар: {product} 
@@ -288,5 +290,26 @@ def constrEmail_TR(name, product, phone, date, deliv, coll_cap,
             fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
-    
 
+
+def messageKL(name, email, number, text, request):
+    result_text = f"""Сообщение от клиента - {name}! 
+
+- Мыло: {email}
+- Номер: {number}
+- Комментарий КЛ: {text}"""
+
+    subject_ms = 'СООБЩЕНИЕ ОТ КЛИЕНТА'
+    try:
+        my_email = 'chistohin1@mail.ru'
+        send_mail(
+            subject_ms,
+            result_text,
+            my_email,
+            [
+                'chistohin1@mail.ru',
+                #   'praline.vlg@yandex.ru',
+            ],
+            fail_silently=False)
+    except:
+        return render(request, "engine_html/error.html")

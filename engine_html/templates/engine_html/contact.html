@@ -13,7 +13,7 @@
                 <div class = 'dash_c'></div>
             </div>
 
-            <form action="#" class="form" id="form">
+            <form method = 'POST' class="form" id="form">{% csrf_token %}
                 <div class = "container-inf">
                     <div class = "inf">
                         <strong style = "color:#F5BF00;">АДРЕС:</strong>
@@ -21,31 +21,31 @@
                         <strong style = "color:#F5BF00;">ТЕЛЕФОНЫ <br>И ЭЛЕКТРОННАЯ ПОЧТА:</strong>
                         <p style = "margin-top:15px;">+79999999999<br>
                         info@ratibor.net</p>
-                        <strong class = "form-cont">НАПИШИТЕ МНЕ</strong><p class ='form-cont'>💌</p>
+                        <a href="https://t.me/Kotenko_1" ><strong class = "form-cont">НАПИШИТЕ МНЕ</strong><p class ='form-cont'>💌</p></a>
                     </div>
                     <img class="ic_par_cont" src="/static/engine_html/icon/parline2.png">
                 </div>
-                <div class = "container-pole">
+                <div class = "container-pole" id = "loading_cont">
 
-                    <div class="sec-cont"> 
+                    <div class="sec-cont" id = "hid_fr"> 
                         <div class = "title-form" align = "center" style = "padding: 0 1em 1em 1em;"><strong id="title-f">Форма обратной связи</strong></div>
                         <!-- Имя -->
                         <div class="name data">
-                            <input tabindex="1" placeholder="Ваше ФИО" class="form_input" name="name">
+                            <input tabindex="1" placeholder="Ваше ФИО" class="form_input" id="name">
                         </div>
                         <br>
                         <!-- Мыло -->
                         <div class="email data">
-                            <input tabindex="2" placeholder="Ваш e-mail" class="form_input" name="email">
+                            <input tabindex="2" placeholder="Ваш e-mail" class="form_input" id="email">
                         </div>
                         <br>
                         <!-- Телефон -->
                         <div class="phone data">
-                            <input tabindex="3" placeholder="Ваш телефон" class="form_input" name="phone">
+                            <input tabindex="3" placeholder="Ваш телефон" class="form_input" id="phone">
                         </div>
                         <br>
                         <!-- Текст -->
-                        <textarea class = "form_input" id = "textar" placeholder = "Ваше сообщение"></textarea>
+                        <textarea class = "form_input" id = "text" placeholder = "Ваше сообщение"></textarea>
                     </div>
                       <!-- Кнопки -->
                     <div class="buts">
@@ -53,7 +53,7 @@
                             <button class="bt" id = "push" type="reset">ОЧИСТИТЬ</button>
                         </div>
                         <div class="but1">
-                            <button class="bt" type="submit">ОТПРАВИТЬ</button>
+                            <button class="bt" type="submit" id="subPush">ОТПРАВИТЬ</button>
                         </div>
                     </div>
 
@@ -66,6 +66,9 @@
     </div>
 
 </section>
+<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
 <script src = "/static/engine_html/js/map.js"></script>
+<script src = "/static/engine_html/js/contact.js"></script>
+<script src = "/static/engine_html/js/search.js"></script>
 {%endblock%}

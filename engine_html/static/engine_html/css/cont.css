@@ -11,6 +11,24 @@ input, textarea:-moz-placeholder {
 }
 /* --------------------------------------------- */
 
+.form_input.errorCont{
+    background-color: red;
+}
+.container-pole.load_cont{
+    background-color: #ffffffd7;
+    padding: 10px;
+    border-radius: 1em;
+    background: rgb(72, 72, 72) url('/static/engine_html/img/render.gif') center /50px no-repeat;
+    transition: all 1s ease;
+}
+.sec-cont.load_cont2{
+    visibility: hidden;
+}
+/* .form_input.load_Cont{
+    display: none;
+    transition: all 1s ease;
+} */
+
 #Con{
     display: flex;
     justify-content: center;

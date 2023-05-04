@@ -52,11 +52,13 @@
         <div class = 'second_sec'>
           <img class = "ic_par" src = "/static/engine_html/icon/parline.png">
           
-          <div class = 'men_search'>
-            <form class = 'search'>
-              <input type="search" class = "window_s"  placeholder="Поиск..." name = 's'> 
-              <button class = "bt_search" type="submit"></button>
+          <div class = 'men_search' id = "Men_search">
+
+            <form class = 'search' id = "search_firefox">
+              <input type="search" class = "window_s"  placeholder="Поиск..." name = 's' id = 'searchLo'> 
+              <button class = "bt_search" type="submit" id = "bt_search"></button>
             </form>
+            
             <div class = "menu-burger">
               <span>
               </span>
@@ -74,7 +76,7 @@
             </div>
           </div>
           
-          <div class = 'icon_magaz'>
+          <div class = 'icon_magaz' id = "magaz">
             <a class = "img_rev" href = "/reviews"><img class = "ic_heart" src = "/static/engine_html/icon/heart.png"></a>
             <a class = "img_case" href = "/cont"><img class = "ic_corz" src = "/static/engine_html/icon/case.png"></a>
           </div>
@@ -82,52 +84,6 @@
         </div>
 
       </section>
-
-      {% comment %} Модалка {% endcomment %}
-      <div class = "popup_cont" id = "popup_cont">
-        <div class = "popup">
-          <div class = "container-pole2" id = "container-pole2">
-            <form action="#" class="form-click" id="form-click">
-
-              <div class="sec-cont"> 
-                  <div class = "exit_cont">
-                    <div class = "title-form" align = "center" style = "padding: 0 1em 1em 1em;"><strong id="title-f">Форма обратной связи</strong></div>
-                    <div class = 'exit' id = 'exit'>X</div>
-                  </div>
-                  <!-- Имя -->
-                  <div class="name data">
-                      <input tabindex="1" placeholder="Ваше ФИО" class="form_input" name="name">
-                  </div>
-                  <br>
-                  <!-- Мыло -->
-                  <div class="email data">
-                      <input tabindex="2" placeholder="Ваш e-mail" class="form_input" name="email">
-                  </div>
-                  <br>
-                  <!-- Телефон -->
-                  <div class="phone data">
-                      <input tabindex="3" placeholder="Ваш телефон" class="form_input" name="phone">
-                  </div>
-                  <br>
-                  <!-- Текст -->
-                  <textarea class = "form_input" id = "textar" placeholder = "Ваше сообщение"></textarea>
-              </div>
-                <!-- Кнопки -->
-              <div class="buts">
-                  <div class="but1">
-                      <button class="bt" id = "push" type="reset">ОЧИСТИТЬ</button>
-                  </div>
-                  <div class="but1">
-                      <button class="bt" type="submit">ОТПРАВИТЬ</button>
-                  </div>
-              </div>
-
-            </form>
-            
-          </div>
-        </div>
-      </div>
-      {% comment %} Модалка {% endcomment %}
       
       {% block content%}
       {% endblock %}
@@ -174,5 +130,6 @@
     <script src="/static/engine_html/js/slick.min.js"></script>
     <script src= "/static/engine_html/js/.js"></script>
     <script type="text/javascript" src = "/static/engine_html/js/orders.js"></script>
+    <script src = "/static/engine_html/js/search.js"></script>
   </body>
 </html>

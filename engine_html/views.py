@@ -1,10 +1,12 @@
+import json
 from django.shortcuts import render, redirect, HttpResponse
 from django.core.mail import send_mail
 from .models import Review
 from .forms import ReviewForm
 from django.views.decorators.csrf import csrf_protect
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseBadRequest
 from engine_html.pushEmFunc import *
+from flask import request
 
 
 @csrf_protect
@@ -97,8 +99,22 @@ def gallerys(request):
     return render(request, 'engine_html/gallery.html')
 
 
+@csrf_protect
 def cont(request):
-    return render(request, 'engine_html/contact.html')
+    if request.method == 'POST':
+        print("Поймали пост")
+        name_с = request.POST.get('name', None)
+        email_с = request.POST.get('email', None)
+        number_с = request.POST.get('number', None)
+        text_с = request.POST.get('text', None)
+
+        print(name_с, email_с, number_с, text_с)
+        messageKL(name_с, email_с, number_с, text_с, request)
+
+        data = {'answer': 'oke'}
+        return JsonResponse(data)
+    else:
+        return render(request, 'engine_html/contact.html')
 
 
 def reviews(request):
