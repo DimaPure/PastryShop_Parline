@@ -1,12 +1,13 @@
 import json
 from django.shortcuts import render, redirect, HttpResponse
 from django.core.mail import send_mail
-from .models import Review
+from .models import Review, Feedback
 from .forms import ReviewForm
 from django.views.decorators.csrf import csrf_protect
 from django.http import JsonResponse, HttpResponseBadRequest
 from engine_html.pushEmFunc import *
 from flask import request
+import datetime
 
 
 @csrf_protect
@@ -37,7 +38,14 @@ def main(request):
 
     trset_vid = request.POST.get('trset_vid', None)
 
+    # Дата отправки
+    date = datetime.datetime.today()
+    today = date.strftime("%m.%d.%Y")
+
     if request.method == "POST":
+        feed = Feedback(name=name, phone=phone, product=product, date=today)
+        feed.save()
+
         if 'ИНДИВИДУАЛЬНЫЙ бенто' in product:
             constrEmail_indBent(name, product, phone, date, deliv, bisc_vid,
                                 fil_vid, hardPicture, text, request)
@@ -86,7 +94,6 @@ def main(request):
                            trset_vid, text, request)
             data = {'answer': 'oke'}
             return JsonResponse(data)
-
     else:
         return render(request, "engine_html/main_catalog.html", {})
 
