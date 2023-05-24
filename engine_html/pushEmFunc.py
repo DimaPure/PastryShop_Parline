@@ -1,9 +1,10 @@
 from django.core.mail import send_mail
 from django.shortcuts import render
+import os
 
 addresses = [
-    'chistohin1@mail.ru',
-    'praline.vlg@yandex.ru',
+    os.environ.get('EMAIL_HOST_USER'),
+    os.environ.get('EMAIL_HOST_PUSH_USER'),
 ]
 
 

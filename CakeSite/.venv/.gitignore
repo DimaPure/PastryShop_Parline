@@ -1,0 +1,9 @@
+/ .env
+/env
+*.log
+thumbs.db
+.DS_Store
+/node_modules
+/packages
+*.pyc
+*.egg-info
