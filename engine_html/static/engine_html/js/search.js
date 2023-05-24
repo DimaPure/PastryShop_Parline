@@ -24,3 +24,11 @@ document.querySelector("#bt_search").onclick = function(e){
     }
 
 }; 
+
+// Кнопки заказа
+for(var i = 0; i < document.getElementsByClassName('bento_order').length; i++) {
+    const someBut = document.getElementsByClassName('bento_order')[i];
+    someBut.onclick = function (e){
+        e.preventDefault();
+        window.location.href='mainCake';
+    }};
