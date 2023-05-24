@@ -4,7 +4,6 @@ if(!Bro.includes('Firefox')){
     document.querySelector('#search_firefox').classList.add('hid_search');
     document.querySelector('#Men_search').classList.add('top_men');
     document.querySelector('#magaz').classList.add('magaz');
-    console.log('Поиск только для Firefox')
 }
 
 // Поиск для firefox

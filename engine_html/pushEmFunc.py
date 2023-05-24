@@ -1,6 +1,11 @@
 from django.core.mail import send_mail
 from django.shortcuts import render
 
+addresses = [
+    'chistohin1@mail.ru',
+    'praline.vlg@yandex.ru',
+]
+
 
 # Индивидуальный бенто
 def constrEmail_indBent(name, product, phone, date, deliv, bisc_vid, fil_vid,
@@ -21,15 +26,11 @@ def constrEmail_indBent(name, product, phone, date, deliv, bisc_vid, fil_vid,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -51,15 +52,11 @@ def constrEmail_bent(name, product, phone, date, deliv, hardPicture, text,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -83,15 +80,11 @@ def constrEmail_indTort(name, product, phone, date, deliv, bisTort_vid,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -114,15 +107,11 @@ def constrEmail_RedTort(name, product, phone, date, deliv, weightTort,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -144,15 +133,11 @@ def constrEmail_Tort(name, product, phone, date, deliv, weightTort, text,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -181,15 +166,11 @@ def constrEmail_setCap(name, product, phone, date, deliv, hardPicture,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -214,15 +195,11 @@ def constrEmail_setTR(name, product, phone, date, deliv, hardPicture,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -248,15 +225,11 @@ def constrEmail_CAP(name, product, phone, date, deliv, printPicture,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -279,15 +252,11 @@ def constrEmail_TR(name, product, phone, date, deliv, coll_cap, trset_vid,
     subject_ms = 'ЗАКАЗ С САЙТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")
 
@@ -302,14 +271,10 @@ def messageKL(name, email, number, text, request):
     subject_ms = 'СООБЩЕНИЕ ОТ КЛИЕНТА'
     try:
         my_email = 'chistohin1@mail.ru'
-        send_mail(
-            subject_ms,
-            result_text,
-            my_email,
-            [
-                'chistohin1@mail.ru',
-                #   'praline.vlg@yandex.ru',
-            ],
-            fail_silently=False)
+        send_mail(subject_ms,
+                  result_text,
+                  my_email,
+                  addresses,
+                  fail_silently=False)
     except:
         return render(request, "engine_html/error.html")

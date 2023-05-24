@@ -10,16 +10,18 @@
         <div class = "glav">Спасибо Вам за обратную связь</div>
             {% for el in reviews %}
                 <div class = "rew_cont" id = "rev">
-                    <label class = "text-rev" id = "date">{{el.publication_date}}</label>
-                    <label class = "text-rev">{{el.name}}:</label>
-                    <p class = "text-rev-text">{{el.text_rev}}</p>
+                    <div class = "cont_wind1">
+                        <label class = "text-rev" id = "date">{{el.publication_date}}</label>
+                        <label class = "text-rev">{{el.name}}: {{el.text_rev}}</label>
+                    </div>
                 </div>
             {% endfor %}
         {% else %}
                 <div class = "rew_cont">
-                    <p class = "non_rev">Вы, наш первый покупатель</p>
-                    <p class = "non_rev">Оставьте отзыв, это для нас очень важно</p>
-                    <p class = "non_rev">❤</p>
+                    <div class = "cont_wind">
+                        <label class = "non_rev">Вы наш первый покупатель😨<br>
+                        Оставьте отзыв, это для нас очень важно ❤</label>
+                    </div>
                 </div>
         {% endif %}
         {% comment %}--------------------------------{% endcomment %}

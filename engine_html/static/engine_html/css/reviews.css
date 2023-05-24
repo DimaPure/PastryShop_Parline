@@ -12,28 +12,52 @@
 }
 .rew_cont{
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     width: 90%;
     height: 500px;
-    background-color: rgba(35, 35, 35, 0.623);
+    background-image:url('/static/engine_html/img/ord_ava.jpg');
+    background-size:100%;
     border-radius: 1em;
-    color: rgba(35, 35, 35, 0.952);
     margin: 30px;
+}
+.cont_wind{
+    background-color: #FFE7FB;
+    display: flex;
+    align-items: center;
+    color: black;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
     padding: 20px;
+    border-radius: 1em;
+    text-align: center;
+    height: 50%;
+
+}
+.cont_wind1{
+    background-color: #FFE7FB;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 1em;
+    width: 90%;
+    height: 70%;
+    overflow-y:auto;
+
+}
+.rew_cont label{
+   margin-bottom: 10px;
 }
 .text-rev{
     padding: 10px;
-}
-.text-rev-text{
-    width: 45%;
-    overflow:auto;
-    position: relative;
-    top: 9%;
+    margin: 10px;
 }
 .text-rev-text::-webkit-scrollbar {
     height: 4px; /* ширина для вертикального скролла */
@@ -113,7 +137,8 @@
     border: none;
 }
 #date{
-    margin-right:25%
+    margin-right:25%;
+    white-space: nowrap;
 }
 @media only screen and (max-width: 1100px) {
     .rev-f::placeholder{
@@ -126,6 +151,14 @@
     }
     #date{
         margin-right:20%
+    }
+    .cont_wind{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .cont_wind1{
+        font-size: 13px;
+        padding: 5px;
     }
 }
 @media only screen and (max-width: 680px) {
@@ -145,6 +178,16 @@
     }
     #date{
         margin-right:18%
+    }
+    .cont_wind{
+        font-size: 15px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .cont_wind1{
+        font-size: 10px;
+        padding: 5px;
+        margin: 10px;
     }
    
 }

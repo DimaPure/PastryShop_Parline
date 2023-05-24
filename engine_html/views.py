@@ -39,11 +39,14 @@ def main(request):
     trset_vid = request.POST.get('trset_vid', None)
 
     # Дата отправки
-    date = datetime.datetime.today()
-    today = date.strftime("%m.%d.%Y")
+    date_post = datetime.datetime.today()
+    today_post = date_post.strftime("%d.%m.%Y")
 
     if request.method == "POST":
-        feed = Feedback(name=name, phone=phone, product=product, date=today)
+        feed = Feedback(name=name,
+                        phone=phone,
+                        product=product,
+                        date=today_post)
         feed.save()
 
         if 'ИНДИВИДУАЛЬНЫЙ бенто' in product:

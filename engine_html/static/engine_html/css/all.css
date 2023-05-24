@@ -246,6 +246,9 @@ button.hidBut{
         overflow-y: auto;
         overflow-x: hidden;
     }
+    .formOrd{
+        width: 500px;
+    }
 }
 
 @media only screen and (max-width: 676px) { 
@@ -258,6 +261,9 @@ button.hidBut{
         margin-bottom: 10px;
         font-size: calc(12px + 14 * (100vw / 1000));
     }
+    .formOrd{
+        width: 300px;
+    }
     .formOrd p{
         font-size: 10px;
         margin-bottom: 5px;
@@ -269,4 +275,9 @@ button.hidBut{
         font-size: 50px;
     }
 
+}
+@media only screen and (max-width: 370px) {
+    .formOrd{
+        width: 200px;
+    }
 }

@@ -1,4 +1,4 @@
-let center =[48.70573102787348,44.51388009595795];
+let center =[48.717265093420366,44.53447435455318];
 
 function init(){
     let map = new ymaps.Map('map',{
@@ -6,9 +6,9 @@ function init(){
         zoom:13
     });
 
-    // let placemark = new ymaps.Placemark(center,{},{
+    let placemark = new ymaps.Placemark(center,{},{
 
-    // });
+    });
 
     map.controls.remove('geolocationControl'); // удаляем геолокацию
     map.controls.remove('searchControl'); // удаляем поиск
@@ -19,7 +19,7 @@ function init(){
     map.controls.remove('rulerControl'); // удаляем контрол правил
     map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 
-    // map.geoObjects.add(placemark);
+    map.geoObjects.add(placemark);
 
 }
 ymaps.ready(init);
